@@ -24,3 +24,5 @@
 | [19_Check_whether_BST_contains_Dead_end.mojo](19_Check_whether_BST_contains_Dead_end.mojo) | BST Leaf Conditions + Range Tracking |
 | [20_Largest_BST_Binary_Tree.mojo](20_Largest_BST_Binary_Tree.mojo) | Postorder DFS / Subtree Validation |
 | [21_Flatten_BST_sorted_list.mojo](21_Flatten_BST_sorted_list.mojo) | Inorder Traversal / DLL Flattening |
+| [AVLtree.mojo](AVLtree.mojo) | Self-Balancing AVL Tree Implementation (LL, RR, LR, RL Rotations) |
+| [Insert_Del.mojo](Insert_Del.mojo) | Binary Search Tree Insertion and Deletion Operations |
