@@ -20,3 +20,5 @@
 | [15_Convert_Min_Heap_Max_Heap.mojo](15_Convert_Min_Heap_Max_Heap.mojo) | Heap Construction / Reordering |
 | [16_Rearrange_characters.mojo](16_Rearrange_characters.mojo) | Max Heap / Greedy |
 | [17_Minimum_sum.mojo](17_Minimum_sum.mojo) | Min Heap / Greedy |
+| [maxHeap.mojo](maxHeap.mojo) | Max Heap Class & Priority Queue Implementation |
+| [minHeap.mojo](minHeap.mojo) | Min Heap Class & Priority Queue Implementation |

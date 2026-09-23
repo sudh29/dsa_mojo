@@ -19,6 +19,13 @@
 | [16_Find_the_no_of_slands.mojo](16_Find_the_no_of_slands.mojo) | DFS / BFS / Connected Components |
 | [18_Implement_Kruskals_Algorithm.mojo](18_Implement_Kruskals_Algorithm.mojo) | Kruskal's Algorithm / Union-Find / MST |
 | [36_M-Colouring_Problem.mojo](36_M-Colouring_Problem.mojo) | Backtracking / Graph Coloring |
+| [BFS_DFS_List.mojo](BFS_DFS_List.mojo) | Adjacency List BFS & DFS Traversals |
+| [BFS_mat.mojo](BFS_mat.mojo) | Adjacency Matrix BFS Traversal |
+| [DFS_BFS_stack.mojo](DFS_BFS_stack.mojo) | Iterative DFS & BFS using Stack |
+| [graphDict.mojo](graphDict.mojo) | Dictionary-based Graph Representation |
+| [shortestpath_Dijkstra.mojo](shortestpath_Dijkstra.mojo) | Dijkstra's Single Source Shortest Path |
+| [shortestpath2_floyd.mojo](shortestpath2_floyd.mojo) | Floyd-Warshall All-Pairs Shortest Path |
+| [topologicalSort.mojo](topologicalSort.mojo) | Kahn's Algorithm / Indegree-based Topological Sort |
 
 ---
 

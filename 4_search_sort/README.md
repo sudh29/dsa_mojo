@@ -28,3 +28,9 @@
 | [27_Arithmetic_Number.mojo](27_Arithmetic_Number.mojo) | Math |
 | [28_Smallest_factorial_number.mojo](28_Smallest_factorial_number.mojo) | Binary Search / Factorial Count |
 | [33_Count_Inversions.mojo](33_Count_Inversions.mojo) | Modified Merge Sort |
+| [bubble_sort.mojo](bubble_sort.mojo) | Bubble Sort Implementation |
+| [heap_sort.mojo](heap_sort.mojo) | Heap Sort Implementation |
+| [insertion_sort.mojo](insertion_sort.mojo) | Insertion Sort Implementation |
+| [merge_sort.mojo](merge_sort.mojo) | Merge Sort Implementation |
+| [quick_sort.mojo](quick_sort.mojo) | Quick Sort Implementation |
+| [selection_sort.mojo](selection_sort.mojo) | Selection Sort Implementation |

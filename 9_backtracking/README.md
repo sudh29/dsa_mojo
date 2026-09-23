@@ -18,3 +18,9 @@
 | [16_Print_all_possible_paths_from_top_left_bottom_right_mXn_matrix.mojo](16_Print_all_possible_paths_from_top_left_bottom_right_mXn_matrix.mojo) | Backtracking / Matrix Traversal |
 | [17_Partition_array_to_K_subsets.mojo](17_Partition_array_to_K_subsets.mojo) | Backtracking / K-Partitioning |
 | [18_Find_K-th_Permutation_Sequence_first_N_natural_numbers.mojo](18_Find_K-th_Permutation_Sequence_first_N_natural_numbers.mojo) | Backtracking / Factorial Number System |
+| [allCombinationStr.mojo](allCombinationStr.mojo) | Recursion / String Combinations with Replacement |
+| [knapsack1.mojo](knapsack1.mojo) | 0/1 Knapsack Recursive Approach |
+| [knapsack2.mojo](knapsack2.mojo) | 0/1 Knapsack Branch & Bound / Memoized |
+| [pathFinder.mojo](pathFinder.mojo) | Grid Pathfinding with Obstacles |
+| [sortedcheck.mojo](sortedcheck.mojo) | Recursive Array Sorted Check |
+| [towerofHanoi.mojo](towerofHanoi.mojo) | Classic Tower of Hanoi Recursion |

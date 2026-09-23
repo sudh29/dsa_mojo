@@ -37,6 +37,12 @@
 | [32_Kth_Ancestor_node_Binary_tree.mojo](32_Kth_Ancestor_node_Binary_tree.mojo) | DFS / Backtracking |
 | [33_Find_all_Duplicate_subtrees_Binary_tree.mojo](33_Find_all_Duplicate_subtrees_Binary_tree.mojo) | DFS / Subtree Serialization |
 | [34_Tree_Isomorphism_Problem.mojo](34_Tree_Isomorphism_Problem.mojo) | Recursion / Tree Comparison |
+| [In_Pre_Post_order.mojo](In_Pre_Post_order.mojo) | Standard Inorder, Preorder, Postorder Traversals |
+| [maxElement.mojo](maxElement.mojo) | Find Maximum Element in Binary Tree |
+| [maxSumLevel.mojo](maxSumLevel.mojo) | Level with Maximum Sum (Iterative BFS) |
+| [maxSumLevel_Rec.mojo](maxSumLevel_Rec.mojo) | Level with Maximum Sum (Recursive DFS) |
+| [ReversePrint.mojo](ReversePrint.mojo) | Reverse Level Order Printing |
+| [searchData.mojo](searchData.mojo) | Search Element in Binary Tree |
 
 
 In a tree structure, Depth First Search (DFS) and Breadth First Search (BFS) algorithms are used to traverse the nodes.
