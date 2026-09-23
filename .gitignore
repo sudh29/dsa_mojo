@@ -1,3 +1,7 @@
+# Python / uv virtual environments
+.venv/
+__pycache__/
+*.pyc
 
 # pixi environments
 .pixi
