@@ -13,9 +13,9 @@ struct Solution:
 
         # Initialize max_matrix with zeros
         var max_matrix = List[List[Int]]()
-        for i in range(n):
+        for _ in range(n):
             var row = List[Int]()
-            for j in range(n):
+            for _ in range(n):
                 row.append(0)
             max_matrix.append(row^)
 
@@ -64,7 +64,9 @@ struct Solution:
 
         return max_diff
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var mat = List[List[Int]]()
     mat.append([1, 2, -1, -4, -20])
@@ -74,4 +76,6 @@ def main():
     mat.append([0, -4, 10, -5, 1])
 
     print("Matrix 5x5 initialized.")
-    print("Maximum value of mat[c][d] - mat[a][b]:", sol.find_max_value(mat))
+    var ans = sol.find_max_value(mat)
+    print("Maximum value of mat[c][d] - mat[a][b]:", ans)
+    assert_equal(ans, 18)

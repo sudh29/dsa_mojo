@@ -13,7 +13,9 @@ def bubble_sort(mut a: List[Int]):
         if flag == 0:
             break
 
-def main():
+from std.testing import assert_true, assert_equal
+
+def main() raises:
     var a = List[Int]()
     a.append(8); a.append(2); a.append(6); a.append(7); a.append(2); a.append(1); a.append(0); a.append(3)
     bubble_sort(a)
@@ -21,3 +23,6 @@ def main():
     for i in range(len(a)):
         print(a[i], end=" ")
     print()
+    assert_equal(len(a), 8)
+    for i in range(len(a) - 1):
+        assert_true(a[i] <= a[i + 1])

@@ -31,10 +31,20 @@ struct Solution:
             else:
                 low = mid + 1
 
-        return ans^
+        return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
-    print("Smallest num for at least 1 trailing zero:", sol.find_num(1))
-    print("Smallest num for at least 6 trailing zeros:", sol.find_num(6))
-    print("Smallest num for at least 5 trailing zeros:", sol.find_num(5))
+    var ans1 = sol.find_num(1)
+    print("Smallest num for at least 1 trailing zero:", ans1)
+    assert_equal(ans1, 5)
+
+    var ans2 = sol.find_num(6)
+    print("Smallest num for at least 6 trailing zeros:", ans2)
+    assert_equal(ans2, 25)
+
+    var ans3 = sol.find_num(5)
+    print("Smallest num for at least 5 trailing zeros:", ans3)
+    assert_equal(ans3, 25)

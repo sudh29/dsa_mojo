@@ -19,9 +19,12 @@ struct Solution:
                 max_so_far = max_ending_here
         return max_so_far
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var arr: List[Int] = [-2, -3, 4, -1, -2, 1, 5, -3]
     print("Array: [-2, -3, 4, -1, -2, 1, 5, -3]")
     var max_sum = sol.max_sub_array_sum(arr)
     print("Maximum Contiguous Subarray Sum:", max_sum)
+    assert_equal(max_sum, 7)

@@ -23,11 +23,15 @@ struct Solution:
             res += chars[i]
         return res^
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var s = String("hello")
     print("Original string:", s)
-    print("Reversed string:", sol.reverse(s))
+    var rev = sol.reverse(s)
+    print("Reversed string:", rev)
+    assert_equal(rev, "olleh")
 
     var chars = List[String]()
     chars.append("h"); chars.append("e"); chars.append("l"); chars.append("l"); chars.append("o")
@@ -36,3 +40,5 @@ def main():
     for i in range(len(chars)):
         print("\"" + chars[i] + "\"", end=", " if i < len(chars) - 1 else "")
     print("]")
+    assert_equal(chars[0], "o")
+    assert_equal(chars[4], "h")

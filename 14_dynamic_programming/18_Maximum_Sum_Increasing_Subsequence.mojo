@@ -13,9 +13,11 @@ def max_sum_is(arr: List[Int], n: Int) -> Int:
     for i in range(1, n):
         if dp[i] > ans:
             ans = dp[i]
-    return ans^
+    return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var arr = List[Int]()
     arr.append(1)
     arr.append(101)
@@ -24,4 +26,6 @@ def main():
     arr.append(100)
     arr.append(4)
     arr.append(5)
-    print("Maximum Sum Increasing Subsequence:", max_sum_is(arr, len(arr)))
+    var ans = max_sum_is(arr, len(arr))
+    print("Maximum Sum Increasing Subsequence:", ans)
+    assert_equal(ans, 106)

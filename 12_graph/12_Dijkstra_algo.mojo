@@ -44,7 +44,9 @@ def dijkstra(v: Int, adj: List[List[Edge]], s: Int) -> List[Int]:
                 
     return dist^
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var v = 3
     var adj = List[List[Edge]]()
     for _ in range(v):
@@ -61,3 +63,6 @@ def main():
     print("Distances from source 2:")
     for i in range(v):
         print("To node", i, ":", distances[i])
+    assert_equal(distances[0], 4)
+    assert_equal(distances[1], 3)
+    assert_equal(distances[2], 0)

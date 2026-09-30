@@ -19,19 +19,25 @@ def max_consecutive_diff_sum(mut arr: List[Int]) -> Int:
         var diff = arr[i] - arr[n - 1 - i]
         res += diff if diff >= 0 else -diff
 
-    return res^
+    return res
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var arr = List[Int]()
     arr.append(4)
     arr.append(2)
     arr.append(1)
     arr.append(8)
 
-    print("Max consecutive circular differences sum:", max_consecutive_diff_sum(arr))
+    var ans1 = max_consecutive_diff_sum(arr)
+    print("Max consecutive circular differences sum:", ans1)
+    assert_equal(ans1, 18)
 
     var arr2 = List[Int]()
     arr2.append(10)
     arr2.append(12)
     arr2.append(15)
-    print("Max consecutive circular differences sum 2:", max_consecutive_diff_sum(arr2))
+    var ans2 = max_consecutive_diff_sum(arr2)
+    print("Max consecutive circular differences sum 2:", ans2)
+    assert_equal(ans2, 10)

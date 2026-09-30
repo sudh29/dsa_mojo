@@ -1,0 +1,10 @@
+# Pre-commit configuration for Mojo DSA repository
+repos:
+  - repo: local
+    hooks:
+      - id: mojo-format
+        name: Mojo Format Check
+        entry: uv run mojo format
+        language: system
+        types_or: [mojo]
+        pass_filenames: true

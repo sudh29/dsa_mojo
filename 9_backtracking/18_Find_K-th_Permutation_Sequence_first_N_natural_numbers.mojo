@@ -5,7 +5,7 @@ def factorial(n: Int) -> Int:
     var res = 1
     for i in range(2, n + 1):
         res *= i
-    return res^
+    return res
 
 def kth_permutation(n: Int, k: Int) -> String:
     var nums = List[Int]()
@@ -26,7 +26,14 @@ def kth_permutation(n: Int, k: Int) -> String:
 
     return res^
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     # For N=3, K=3: permutations are 123, 132, 213, 231, 312, 321 -> 213
-    print("3rd permutation for N=3:", kth_permutation(3, 3))
-    print("4th permutation for N=4:", kth_permutation(4, 4))
+    var ans1 = kth_permutation(3, 3)
+    print("3rd permutation for N=3:", ans1)
+    assert_equal(ans1, "213")
+
+    var ans2 = kth_permutation(4, 4)
+    print("4th permutation for N=4:", ans2)
+    assert_equal(ans2, "1342")

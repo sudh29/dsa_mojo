@@ -1,4 +1,4 @@
-# Construct Trie from Scratch
+# Canonical Trie implementation in Mojo 1.1
 
 struct TrieNode(Movable):
     var children: List[Int]
@@ -10,7 +10,7 @@ struct TrieNode(Movable):
             self.children.append(-1)
         self.is_end_of_word = False
 
-struct Trie:
+struct Trie(Movable):
     var nodes: List[TrieNode]
 
     def __init__(out self):
@@ -42,24 +42,14 @@ struct Trie:
             current = self.nodes[current].children[idx]
         return self.nodes[current].is_end_of_word
 
-from std.testing import assert_true, assert_false
-
-def main() raises:
-    var trie = Trie()
-    trie.insert("the")
-    trie.insert("a")
-    trie.insert("there")
-    trie.insert("answer")
-    trie.insert("any")
-    trie.insert("by")
-    trie.insert("bye")
-    trie.insert("their")
-
-    print("Search 'the':", trie.search("the"))
-    print("Search 'these':", trie.search("these"))
-    print("Search 'their':", trie.search("their"))
-    print("Search 'th':", trie.search("th"))
-    assert_true(trie.search("the"))
-    assert_false(trie.search("these"))
-    assert_true(trie.search("their"))
-    assert_false(trie.search("th"))
+    def starts_with(self, prefix: String) -> Bool:
+        var current = 0
+        var bytes = prefix.as_bytes()
+        for i in range(prefix.byte_length()):
+            var idx = Int(bytes[i]) - 97
+            if idx < 0 or idx >= 26:
+                return False
+            if self.nodes[current].children[idx] == -1:
+                return False
+            current = self.nodes[current].children[idx]
+        return True

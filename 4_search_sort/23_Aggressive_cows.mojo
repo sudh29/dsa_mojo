@@ -42,12 +42,16 @@ struct Solution:
             else:
                 end = mid - 1
 
-        return ans^
+        return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var stalls: List[Int] = [1, 2, 8, 4, 9]
     var cows = 3
 
     print("Stalls: [1, 2, 8, 4, 9], Cows:", cows)
-    print("Largest minimum distance:", sol.largest_min_distance(stalls, len(stalls), cows))
+    var ans = sol.largest_min_distance(stalls, len(stalls), cows)
+    print("Largest minimum distance:", ans)
+    assert_equal(ans, 3)

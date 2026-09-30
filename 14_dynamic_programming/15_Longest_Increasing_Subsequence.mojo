@@ -14,7 +14,7 @@ def lower_bound(dp: List[Int], target: Int) -> Int:
         else:
             low = mid + 1
 
-    return ans^
+    return ans
 
 def longest_increasing_subsequence(a: List[Int]) -> Int:
     var n = len(a)
@@ -33,7 +33,9 @@ def longest_increasing_subsequence(a: List[Int]) -> Int:
 
     return len(dp)
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var a = List[Int]()
     a.append(10)
     a.append(22)
@@ -45,7 +47,9 @@ def main():
     a.append(60)
     a.append(80)
 
-    print("LIS length:", longest_increasing_subsequence(a))
+    var ans1 = longest_increasing_subsequence(a)
+    print("LIS length:", ans1)
+    assert_equal(ans1, 6)
 
     var b = List[Int]()
     b.append(0)
@@ -64,4 +68,6 @@ def main():
     b.append(11)
     b.append(7)
     b.append(15)
-    print("LIS length 2:", longest_increasing_subsequence(b))
+    var ans2 = longest_increasing_subsequence(b)
+    print("LIS length 2:", ans2)
+    assert_equal(ans2, 6)

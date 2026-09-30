@@ -38,13 +38,23 @@ struct Stack:
     def is_empty(self) -> Bool:
         return self.top < 0
 
-def main():
+from std.testing import assert_equal, assert_false
+
+def main() raises:
     var stack = Stack(100)
     _ = stack.push(10)
     _ = stack.push(20)
     _ = stack.push(30)
 
     print("Peek top element:", stack.peek())
-    print("Popped element:", stack.pop())
+    assert_equal(stack.peek(), 30)
+
+    var popped = stack.pop()
+    print("Popped element:", popped)
+    assert_equal(popped, 30)
+
     print("Peek after pop:", stack.peek())
+    assert_equal(stack.peek(), 20)
+
     print("Is empty?", stack.is_empty())
+    assert_false(stack.is_empty())

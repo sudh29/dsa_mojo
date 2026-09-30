@@ -39,16 +39,19 @@ def knapsack_fractional(max_weight: Float64, mut items: List[KnapsackItem]) -> F
         else:
             var fraction = remaining_weight / items[i].weight
             total_value += items[i].value * fraction
-            remaining_weight = 0.0
             break
 
     return total_value
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var items = List[KnapsackItem]()
     items.append(KnapsackItem(10.0, 60.0))
     items.append(KnapsackItem(20.0, 100.0))
     items.append(KnapsackItem(30.0, 120.0))
 
     var w = 50.0
-    print("Maximum value in fractional knapsack:", knapsack_fractional(w, items))
+    var ans = knapsack_fractional(w, items)
+    print("Maximum value in fractional knapsack:", ans)
+    assert_equal(ans, 240.0)

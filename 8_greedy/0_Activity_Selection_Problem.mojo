@@ -43,7 +43,9 @@ def max_activities(start: List[Int], end: List[Int]) -> Int:
 
     return count
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var start = List[Int]()
     start.append(1)
     start.append(3)
@@ -58,3 +60,4 @@ def main():
 
     var count = max_activities(start, end)
     print("Maximum activities that can be performed:", count)
+    assert_equal(count, 3)

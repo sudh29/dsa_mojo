@@ -20,9 +20,11 @@ def longest_subseq(n: Int, a: List[Int]) -> Int:
     for i in range(1, n):
         if dp[i] > ans:
             ans = dp[i]
-    return ans^
+    return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var a = List[Int]()
     a.append(10)
     a.append(9)
@@ -31,4 +33,6 @@ def main():
     a.append(4)
     a.append(8)
     a.append(6)
-    print("Longest subsequence with diff 1:", longest_subseq(len(a), a))
+    var ans = longest_subseq(len(a), a)
+    print("Longest subsequence with diff 1:", ans)
+    assert_equal(ans, 3)

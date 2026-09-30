@@ -28,7 +28,7 @@ struct FlatArena:
         if b == -1:
             return a
 
-        var res = -1
+        var res: Int
         if self.nodes[a].data < self.nodes[b].data:
             res = a
             self.nodes[res].bottom = self.merge_bottom(self.nodes[a].bottom, b)
@@ -36,7 +36,7 @@ struct FlatArena:
             res = b
             self.nodes[res].bottom = self.merge_bottom(a, self.nodes[b].bottom)
 
-        return res^
+        return res
 
     def flatten(mut self, root: Int) -> Int:
         if root == -1 or self.nodes[root].next == -1:
@@ -54,7 +54,7 @@ struct FlatArena:
             curr = self.nodes[curr].bottom
         print("]")
 
-def main():
+def main() raises:
     var arena = FlatArena()
 
     # List 1: 5 -> 7 -> 8 -> 30
@@ -86,3 +86,5 @@ def main():
     var flat_head = arena.flatten(n5)
     print("Flattened List:")
     arena.print_bottom_list(flat_head)
+    from std.testing import assert_equal
+    assert_equal(arena.nodes[flat_head].data, 5)

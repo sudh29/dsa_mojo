@@ -1,7 +1,6 @@
-# Reverse a Linked List
-# Reference: https://mojolang.org/docs/manual/get-started/
+# Canonical Linked List implementation in Mojo 1.1
 
-struct Node:
+struct Node(ImplicitlyCopyable, Movable):
     var data: Int
     var next: Int
 
@@ -9,7 +8,11 @@ struct Node:
         self.data = data
         self.next = next
 
-struct LinkedList:
+    def __init__(out self, *, copy: Node):
+        self.data = copy.data
+        self.next = copy.next
+
+struct LinkedList(Movable):
     var nodes: List[Node]
     var head: Int
 
@@ -41,6 +44,14 @@ struct LinkedList:
 
         self.head = prev
 
+    def to_list(self) -> List[Int]:
+        var res = List[Int]()
+        var curr = self.head
+        while curr != -1:
+            res.append(self.nodes[curr].data)
+            curr = self.nodes[curr].next
+        return res^
+
     def print_list(self):
         var curr = self.head
         print("[", end="")
@@ -48,22 +59,3 @@ struct LinkedList:
             print(self.nodes[curr].data, end="" if self.nodes[curr].next == -1 else " -> ")
             curr = self.nodes[curr].next
         print("]")
-
-from std.testing import assert_equal
-
-def main() raises:
-    var ll = LinkedList()
-    _ = ll.append(1)
-    _ = ll.append(2)
-    _ = ll.append(3)
-    _ = ll.append(4)
-    _ = ll.append(5)
-
-    print("Original List:")
-    ll.print_list()
-
-    ll.reverse()
-
-    print("Reversed List:")
-    ll.print_list()
-    assert_equal(ll.nodes[ll.head].data, 5)

@@ -26,7 +26,7 @@ struct LinkedListArena:
         if l2 == -1:
             return l1
 
-        var head = -1
+        var head: Int
         if self.nodes[l1].data <= self.nodes[l2].data:
             head = l1
             self.nodes[head].next = self.merge_two_lists(self.nodes[l1].next, l2)
@@ -63,7 +63,7 @@ struct LinkedListArena:
             curr = self.nodes[curr].next
         print("]")
 
-def main():
+def main() raises:
     var arena = LinkedListArena()
 
     # List 1: 1 -> 4 -> 5
@@ -92,3 +92,5 @@ def main():
     var merged_head = arena.merge_k_lists(heads^, 3)
     print("Merged K Sorted Lists:")
     arena.print_list(merged_head)
+    from std.testing import assert_equal
+    assert_equal(arena.nodes[merged_head].data, 1)

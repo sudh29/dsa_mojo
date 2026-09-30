@@ -14,9 +14,9 @@ struct Solution:
 
         # Initialize n x n 2D DP table with zeros
         var dp = List[List[Int]]()
-        for i in range(n):
+        for _ in range(n):
             var row = List[Int]()
-            for j in range(n):
+            for _ in range(n):
                 row.append(0)
             dp.append(row^)
 
@@ -56,16 +56,24 @@ struct Solution:
 
         return merges
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var str1 = String("abcd")
     print("String 1:", str1)
-    print("Min insertions to make palindrome:", sol.min_insertions(str1))
+    var ans1 = sol.min_insertions(str1)
+    print("Min insertions to make palindrome:", ans1)
+    assert_equal(ans1, 3)
 
     var str2 = String("aba")
     print("String 2:", str2)
-    print("Min insertions to make palindrome:", sol.min_insertions(str2))
+    var ans2 = sol.min_insertions(str2)
+    print("Min insertions to make palindrome:", ans2)
+    assert_equal(ans2, 0)
 
     var arr: List[Int] = [1, 4, 5, 9, 1]
     print("Array: [1, 4, 5, 9, 1]")
-    print("Min merges to make array palindrome:", sol.min_merge_operations(arr))
+    var ans3 = sol.min_merge_operations(arr)
+    print("Min merges to make array palindrome:", ans3)
+    assert_equal(ans3, 1)
