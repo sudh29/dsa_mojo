@@ -33,16 +33,24 @@ struct Solution:
 
         return total_water
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var arr1: List[Int] = [3, 0, 0, 2, 0, 4]
     print("Elevation map 1: [3, 0, 0, 2, 0, 4]")
-    print("Trapped rain water:", sol.trapping_water(arr1))
+    var ans1 = sol.trapping_water(arr1)
+    print("Trapped rain water:", ans1)
+    assert_equal(ans1, 10)
 
     var arr2: List[Int] = [7, 4, 0, 9]
     print("Elevation map 2: [7, 4, 0, 9]")
-    print("Trapped rain water:", sol.trapping_water(arr2))
+    var ans2 = sol.trapping_water(arr2)
+    print("Trapped rain water:", ans2)
+    assert_equal(ans2, 10)
 
     var arr3: List[Int] = [6, 9, 9]
     print("Elevation map 3: [6, 9, 9]")
-    print("Trapped rain water:", sol.trapping_water(arr3))
+    var ans3 = sol.trapping_water(arr3)
+    print("Trapped rain water:", ans3)
+    assert_equal(ans3, 0)

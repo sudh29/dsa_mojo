@@ -14,13 +14,18 @@ struct Solution:
                 return False
         return True
 
-def main():
+from std.testing import assert_true, assert_false
+
+def main() raises:
     var sol = Solution()
     var s1 = String("racecar")
     print("String:", s1, "-> Is palindrome:", sol.is_palindrome(s1))
+    assert_true(sol.is_palindrome(s1))
 
     var s2 = String("abba")
     print("String:", s2, "-> Is palindrome:", sol.is_palindrome(s2))
+    assert_true(sol.is_palindrome(s2))
 
     var s3 = String("hello")
     print("String:", s3, "-> Is palindrome:", sol.is_palindrome(s3))
+    assert_false(sol.is_palindrome(s3))

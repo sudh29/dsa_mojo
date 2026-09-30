@@ -38,18 +38,26 @@ struct Solution:
             if max_prod > res:
                 res = max_prod
 
-        return res^
+        return res
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var arr1: List[Int] = [2, 3, -2, 4]
     print("Array 1: [2, 3, -2, 4]")
-    print("Max product subarray:", sol.max_product(arr1))
+    var ans1 = sol.max_product(arr1)
+    print("Max product subarray:", ans1)
+    assert_equal(ans1, 6)
 
     var arr2: List[Int] = [-2, 0, -1]
     print("Array 2: [-2, 0, -1]")
-    print("Max product subarray:", sol.max_product(arr2))
+    var ans2 = sol.max_product(arr2)
+    print("Max product subarray:", ans2)
+    assert_equal(ans2, 0)
 
     var arr3: List[Int] = [6, -3, -10, 0, 2]
     print("Array 3: [6, -3, -10, 0, 2]")
-    print("Max product subarray:", sol.max_product(arr3))
+    var ans3 = sol.max_product(arr3)
+    print("Max product subarray:", ans3)
+    assert_equal(ans3, 180)

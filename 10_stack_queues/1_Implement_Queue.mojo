@@ -51,13 +51,23 @@ struct Queue:
             return -1
         return self.array[self.rear]
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var q = Queue(5)
     _ = q.enqueue(10)
     _ = q.enqueue(20)
     _ = q.enqueue(30)
 
     print("Front element:", q.get_front())
+    assert_equal(q.get_front(), 10)
+
     print("Rear element:", q.get_rear())
-    print("Dequeued:", q.dequeue())
+    assert_equal(q.get_rear(), 30)
+
+    var dequeued = q.dequeue()
+    print("Dequeued:", dequeued)
+    assert_equal(dequeued, 10)
+
     print("Front after dequeue:", q.get_front())
+    assert_equal(q.get_front(), 20)

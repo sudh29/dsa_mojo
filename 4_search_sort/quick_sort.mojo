@@ -24,7 +24,9 @@ def quick_sort(mut a: List[Int]):
     if len(a) > 1:
         quick_sort_range(a, 0, len(a) - 1)
 
-def main():
+from std.testing import assert_true, assert_equal
+
+def main() raises:
     var x = List[Int]()
     x.append(5); x.append(22); x.append(-6); x.append(7); x.append(2); x.append(1); x.append(0); x.append(3)
     quick_sort(x)
@@ -32,3 +34,6 @@ def main():
     for i in range(len(x)):
         print(x[i], end=" ")
     print()
+    assert_equal(len(x), 8)
+    for i in range(len(x) - 1):
+        assert_true(x[i] <= x[i + 1])

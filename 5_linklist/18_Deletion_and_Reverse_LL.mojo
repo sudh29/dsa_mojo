@@ -66,7 +66,6 @@ struct CircularLinkedList:
 
         var prev = -1
         var curr = self.head
-        var next_node = -1
 
         # Break circularity temporarily to reverse
         var last = self.head
@@ -74,7 +73,7 @@ struct CircularLinkedList:
             last = self.nodes[last].next
 
         while True:
-            next_node = self.nodes[curr].next
+            var next_node = self.nodes[curr].next
             self.nodes[curr].next = prev
             prev = curr
             curr = next_node
@@ -98,7 +97,9 @@ struct CircularLinkedList:
             print(" -> ", end="")
         print("]")
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var cll = CircularLinkedList()
     for i in range(1, 6):
         _ = cll.append(i)
@@ -113,3 +114,4 @@ def main():
     print("Reversing circular list:")
     cll.reverse()
     cll.print_list()
+    assert_equal(cll.nodes[cll.head].data, 5)

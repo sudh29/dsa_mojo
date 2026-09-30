@@ -63,7 +63,9 @@ struct Solution:
 
         return res^
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var arr: List[Int] = [12, 5, 787, 1, 23]
     var k = 2
@@ -75,3 +77,6 @@ def main():
     for i in range(len(top_k)):
         print(top_k[i], end=", " if i < len(top_k) - 1 else "")
     print("]")
+    assert_equal(len(top_k), 2)
+    assert_equal(top_k[0], 787)
+    assert_equal(top_k[1], 23)

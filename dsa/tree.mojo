@@ -1,7 +1,6 @@
-# Inorder, Preorder, Postorder, and Level Order Traversals
-# Reference: https://mojolang.org/docs/manual/get-started/
+# Canonical Binary Tree implementation in Mojo 1.1
 
-struct TreeNode:
+struct TreeNode(ImplicitlyCopyable, Movable):
     var val: Int
     var left: Int
     var right: Int
@@ -11,7 +10,12 @@ struct TreeNode:
         self.left = left
         self.right = right
 
-struct TreeArena:
+    def __init__(out self, *, copy: TreeNode):
+        self.val = copy.val
+        self.left = copy.left
+        self.right = copy.right
+
+struct TreeArena(Movable):
     var nodes: List[TreeNode]
 
     def __init__(out self):
@@ -32,8 +36,8 @@ struct TreeArena:
     def preorder(self, root: Int, mut res: List[Int]):
         if root == -1:
             return
-        res.append(self.nodes[root].val)
         self.preorder(self.nodes[root].left, res)
+        res.append(self.nodes[root].val)
         self.preorder(self.nodes[root].right, res)
 
     def postorder(self, root: Int, mut res: List[Int]):
@@ -63,48 +67,3 @@ struct TreeArena:
                 queue.append(self.nodes[curr].right)
 
         return res^
-
-def print_list(name: String, lst: List[Int]):
-    print(name, end=": [")
-    for i in range(len(lst)):
-        print(lst[i], end=", " if i < len(lst) - 1 else "")
-    print("]")
-
-from std.testing import assert_equal
-
-def main() raises:
-    var arena = TreeArena()
-    # Tree:
-    #         10
-    #        /  \
-    #       11   9
-    #      /    / \
-    #     7    15  8
-    var n7 = arena.add_node(7)
-    var n11 = arena.add_node(11, n7, -1)
-    var n15 = arena.add_node(15)
-    var n8 = arena.add_node(8)
-    var n9 = arena.add_node(9, n15, n8)
-    var root = arena.add_node(10, n11, n9)
-
-    var lvl = arena.level_order(root)
-    print_list("Level Order", lvl)
-    assert_equal(lvl[0], 10)
-    assert_equal(lvl[1], 11)
-    assert_equal(lvl[2], 9)
-
-    var inord = List[Int]()
-    arena.inorder(root, inord)
-    print_list("Inorder", inord)
-    assert_equal(inord[0], 7)
-    assert_equal(inord[2], 10)
-
-    var pre = List[Int]()
-    arena.preorder(root, pre)
-    print_list("Preorder", pre)
-    assert_equal(pre[0], 10)
-
-    var post = List[Int]()
-    arena.postorder(root, post)
-    print_list("Postorder", post)
-    assert_equal(post[5], 10)

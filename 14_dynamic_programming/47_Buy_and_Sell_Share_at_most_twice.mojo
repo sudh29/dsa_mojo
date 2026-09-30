@@ -32,9 +32,13 @@ def max_profit(n: Int, price: List[Int]) -> Int:
         if total > ans:
             ans = total
             
-    return ans^
+    return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var price = List[Int]()
     price.append(10); price.append(22); price.append(5); price.append(75); price.append(65); price.append(80)
-    print("Max profit at most twice:", max_profit(len(price), price))
+    var ans = max_profit(len(price), price)
+    print("Max profit at most twice:", ans)
+    assert_equal(ans, 87)

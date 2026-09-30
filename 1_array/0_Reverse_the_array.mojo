@@ -30,13 +30,17 @@ struct Solution:
             start += 1
             end -= 1
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     
     # Test reverse string
     var word = String("GeeksforGeeks")
     print("Original string:", word)
-    print("Reversed string:", sol.reverse_word(word))
+    var rev_word = sol.reverse_word(word)
+    print("Reversed string:", rev_word)
+    assert_equal(rev_word, "skeeGrofskeeG")
 
     # Test reverse array
     var arr: List[Int] = [1, 2, 3, 4, 5, 6]
@@ -46,3 +50,6 @@ def main():
     for i in range(len(arr)):
         print(arr[i], end=", " if i < len(arr) - 1 else "")
     print("]")
+    assert_equal(arr[0], 6)
+    assert_equal(arr[1], 5)
+    assert_equal(arr[5], 1)

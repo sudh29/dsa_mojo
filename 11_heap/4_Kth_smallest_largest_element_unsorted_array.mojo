@@ -107,7 +107,7 @@ struct Solution:
         var ans = -1
         for _ in range(k):
             ans = heap.pop()
-        return ans^
+        return ans
 
     def kth_largest(self, arr: List[Int], k: Int) -> Int:
         var heap = MaxHeap()
@@ -117,13 +117,20 @@ struct Solution:
         var ans = -1
         for _ in range(k):
             ans = heap.pop()
-        return ans^
+        return ans
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var sol = Solution()
     var arr: List[Int] = [7, 10, 4, 3, 20, 15]
     var k = 3
 
     print("Array: [7, 10, 4, 3, 20, 15], k =", k)
-    print("3rd Smallest:", sol.kth_smallest(arr, k))
-    print("3rd Largest:", sol.kth_largest(arr, k))
+    var ans1 = sol.kth_smallest(arr, k)
+    print("3rd Smallest:", ans1)
+    assert_equal(ans1, 7)
+
+    var ans2 = sol.kth_largest(arr, k)
+    print("3rd Largest:", ans2)
+    assert_equal(ans2, 10)

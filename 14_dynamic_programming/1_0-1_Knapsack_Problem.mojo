@@ -20,7 +20,9 @@ def knapsack_01(w: Int, wt: List[Int], val: List[Int], n: Int) -> Int:
 
     return dp[n][w]
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var val = List[Int]()
     val.append(1)
     val.append(2)
@@ -32,4 +34,6 @@ def main():
     wt.append(1)
 
     var w = 4
-    print("Maximum value in knapsack:", knapsack_01(w, wt, val, len(val)))
+    var ans = knapsack_01(w, wt, val, len(val))
+    print("Maximum value in knapsack:", ans)
+    assert_equal(ans, 3)

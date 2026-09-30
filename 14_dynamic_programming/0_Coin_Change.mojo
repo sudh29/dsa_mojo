@@ -14,14 +14,18 @@ def count_coin_change(coins: List[Int], sum_val: Int) -> Int:
 
     return dp[sum_val]
 
-def main():
+from std.testing import assert_equal
+
+def main() raises:
     var coins = List[Int]()
     coins.append(1)
     coins.append(2)
     coins.append(3)
 
     var sum_val = 4
-    print("Number of ways to make sum", sum_val, ":", count_coin_change(coins, sum_val))
+    var ans1 = count_coin_change(coins, sum_val)
+    print("Number of ways to make sum", sum_val, ":", ans1)
+    assert_equal(ans1, 4)
 
     var coins2 = List[Int]()
     coins2.append(2)
@@ -30,4 +34,6 @@ def main():
     coins2.append(6)
 
     var sum_val2 = 10
-    print("Number of ways to make sum", sum_val2, ":", count_coin_change(coins2, sum_val2))
+    var ans2 = count_coin_change(coins2, sum_val2)
+    print("Number of ways to make sum", sum_val2, ":", ans2)
+    assert_equal(ans2, 5)
